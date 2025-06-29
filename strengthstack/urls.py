@@ -20,5 +20,5 @@ from workouts.views import my_workouts
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('workouts/', my_workouts , name= 'workouts'),
+    path('workouts/', my_workouts , name = 'workouts'),
 ]
