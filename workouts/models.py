@@ -6,13 +6,15 @@ from django.contrib.auth.models import User
 # Workouts 
 
 class Workouts(models.Model):
-    title = models.CharField()
-    content = models.TextField()
-    created_on = models.DateTimeField()
+    user = models.ForeignKey(User, on_delete = models.CASCADE)
+    title = models.CharField(max_length= 200)
+    description = models.SlugField(max_length= 200)
+    created_on = models.DateTimeField(auto_now_add=True)
 
 # Exercise
 
 class Exercise(models.Model):
-    name = models.CharField()
+    workout = models.ForeignKey(Workouts, on_delete = models.CASCADE) 
+    name = models.CharField(max_length= 100)
     sets = models.PositiveIntegerField()
     reps = models.PositiveIntegerField()
