@@ -10,3 +10,9 @@ class Workouts(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField()
 
+# Exercise
+
+class Exercise(models.Model):
+    name = models.CharField()
+    sets = models.PositiveIntegerField()
+    reps = models.PositiveIntegerField()
