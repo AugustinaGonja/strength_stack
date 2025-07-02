@@ -10,7 +10,7 @@ class ExerciseInline(admin.TabularInline):
 @admin.register(Workouts)
 
 class WorkoutsAdmin(SummernoteModelAdmin):
-    list_display = ('title', 'user', 'created_on')
+    list_display = ('title', 'created_on')
     search_fields = ['title']
     list_filter = ('created_on',)
     summernote_fields = ('description',)
