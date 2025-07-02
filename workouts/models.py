@@ -18,3 +18,4 @@ class Exercise(models.Model):
     name = models.CharField(max_length= 100)
     sets = models.PositiveIntegerField(default=4)
     reps = models.PositiveIntegerField(default=12)
+    
