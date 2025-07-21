@@ -9,7 +9,7 @@ TRAINING_STYLE = [
     ('straightsets', 'STRAIGHTSETS'),
     ('dropsets', 'DROPSETS'),
     ('clustersets', 'CLUSTERSETS'),
-    ('pyramidsets', 'PYRAMIDsets'),
+    ('pyramidsets', 'PYRAMIDSETS'),
     ('timeundertension', 'TIMEUNDERTENSION'),
     ('other', 'OTHER'),
 ]
