@@ -1,8 +1,10 @@
-from django.shortcuts import render
-from django.views import generic
+from django.views.generic import ListView, TemplateView
 from .models import Workouts, Exercise
 
 # Create your views here.
-class Dashboard(generic.ListView):
-    queryset = Workouts.objects.all()
-    template_name = "workouts/dashboard.html"
+class Dashboard(ListView):
+    model = Workouts
+    template_name = "dashboard.html"
+
+class Home(TemplateView):
+    template_name = "index.html"
