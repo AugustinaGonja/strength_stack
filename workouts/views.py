@@ -11,3 +11,6 @@ class Dashboard(ListView):
 
 class About(TemplateView):
     template_name = "about.html"
+
+class Register(TemplateView):
+    template_name = "registartion.html"
