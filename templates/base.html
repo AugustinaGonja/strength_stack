@@ -1,5 +1,10 @@
 {% load static %}
 
+{% url 'home' as home_url %}
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,10 +37,9 @@
             <div class="collapse navbar-collapse justify-content-end align-center" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="{% url 'about' %}">About</a>
                     <a class="nav-link" href="#">Login</a>
-                    <a class="nav-link" href="#">Contact Us</a>
-                    <a class="btn btn-primary" href="#" role="button">Get Started</a>
+                    <a class="btn btn-primary" href="{% url 'register' %}" role="button">Get Started</a>
                 </div>
             </div>
         </div>
