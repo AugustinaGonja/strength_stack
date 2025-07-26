@@ -25,7 +25,7 @@ class WorkoutsAdmin(SummernoteModelAdmin):
 class ExerciseAdmin(admin.ModelAdmin):
     list_display = ('name', 'workout', 'sets' , 'reps',)
     search_fields = ['name', 'workout__title']
-    list_filter = ('name')
+    list_filter = ('name',)
 
 @admin.register(WorkoutDetails)
 class WorkoutDetailsAdmin(admin.ModelAdmin):

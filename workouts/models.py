@@ -32,7 +32,7 @@ class Workouts(models.Model):
 # Exercise
 
 class Exercise(models.Model):
-    workout = models.ForeignKey(Workouts, related_name= 'exercises', on_delete = models.CASCADE) 
+    workout = models.ForeignKey(Workouts, on_delete = models.CASCADE) 
     name = models.CharField(max_length= 100)
     training_style = models.CharField(max_length= 50 , choices= TRAINING_STYLE , default = "split")
     sets = models.PositiveIntegerField(default=4)
@@ -46,7 +46,7 @@ class Exercise(models.Model):
 # Details 
 
 class WorkoutDetails(models.Model):
-    workout = models.ForeignKey(Workouts, related_name= 'details', on_delete = models.CASCADE)
+    workout = models.ForeignKey(Workouts, on_delete = models.CASCADE)
     updated_on = models.DateTimeField(auto_now=True)
     created_on = models.DateTimeField(auto_now_add=True)
     workout_duration = models.PositiveIntegerField(default="Duration in Minutes" ,null=True , blank=True)

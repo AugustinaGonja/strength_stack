@@ -12,7 +12,7 @@ UNITS = [
     ('lbs', 'POUNDS'),
 ]
 class Profile(models.Model):
-    user = models.OneToOneField(User, related_name= 'user', on_delete = models.CASCADE) 
+    user = models.OneToOneField(User, on_delete = models.CASCADE) 
     age = models.PositiveIntegerField(default= 24)
     gender = models.CharField(max_length= 50 , choices= GENDER ,  default = "m/f")
     current_weight = models.PositiveIntegerField(default=64, choices = UNITS,)
