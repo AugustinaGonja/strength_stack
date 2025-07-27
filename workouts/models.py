@@ -22,9 +22,11 @@ UNITS = [
 class Workouts(models.Model):
     user = models.ForeignKey(User, on_delete = models.CASCADE) 
     title = models.CharField(max_length= 200)
+    workout_duration = models.PositiveIntegerField(default= 120 ,null=True , blank=True)
     training_split = models.CharField(max_length= 200, default='Enter Split')
     description = models.TextField(default='Enter Short Description', blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title
@@ -43,14 +45,3 @@ class Exercise(models.Model):
     def __str__(self):
         return f" {self.name} - {self.sets} x {self.reps}"
 
-# Details 
-
-class WorkoutDetails(models.Model):
-    workout = models.ForeignKey(Workouts, on_delete = models.CASCADE)
-    updated_on = models.DateTimeField(auto_now=True)
-    created_on = models.DateTimeField(auto_now_add=True)
-    workout_duration = models.PositiveIntegerField(default="Duration in Minutes" ,null=True , blank=True)
-    notes = models.CharField(max_length = 100)
-
-    def __str__(self):
-        return f" {self.workout} last modified on {self.updated_on} "

@@ -1,5 +1,5 @@
 from django.views.generic import ListView, TemplateView
-from .models import Workouts ,  Exercise, WorkoutDetails
+from .models import Workouts ,  Exercise
 
 # Create your views here.
 class Home(TemplateView):
@@ -15,8 +15,11 @@ class About(TemplateView):
 class Register(TemplateView):
     template_name = "registration.html"
 
+class Login(TemplateView):
+    template_name = "login.html"
+
 class ViewWorkout(ListView):
-    model = Workouts ,Exercise, WorkoutDetails
+    model = Workouts ,Exercise
     template_name = "view.html"
 
 class ErrorPage(TemplateView):
