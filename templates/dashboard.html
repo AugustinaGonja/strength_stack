@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container my-5">
+  <div class="text-center mb-4">
+    <h1>Dashboard</h1>
+    <p class="lead border-bottom">Welcome Back, {{ user.username }}!</p>
+  </div>
+  {% for workout in workouts %}
+  <div class="card w-100 mb-3">
+    <div class="card-body">
+      <h5 class="card-title">{{workout.title}}</h5>
+      <p class="card-text description">
+        <strong>
+          Description |
+        </strong>{{workout.description}}
+      </p>
+      <p class="card-text split">
+        <strong>
+          Training Split |
+        </strong>{{workout.training_split}}
+      </p>
+      <p class="card-text created_on">
+        <strong>
+          Created On |
+        </strong>{{workout.created_on}}
+      </p>
+      <a href="#" class="btn btn-primary">Edit Details</a>
+      <a href="#" class="btn btn-primary">Delete</a>
+    </div>
+  </div>
+  {% endfor %}
+  <a href="#" class="btn btn-primary">Create New Workout</a>
+  <h2 class = "my-5">Progress Chart</h2>
+  {% endblock %}

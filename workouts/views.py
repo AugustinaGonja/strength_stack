@@ -8,6 +8,7 @@ class Home(TemplateView):
 class Dashboard(ListView):
     model = Workouts
     template_name = "dashboard.html"
+    context_object_name ='workouts'
 
 class About(TemplateView):
     template_name = "about.html"
