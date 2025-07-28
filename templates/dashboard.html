@@ -4,7 +4,11 @@
 <div class="container my-5">
   <div class="text-center mb-4">
     <h1>Dashboard</h1>
-    <p class="lead border-bottom">Welcome Back, {{ user.username }}!</p>
+    <h2 class="lead">Welcome Back,
+      <strong>
+        {{ user.username }}!
+      </strong>
+    </h2>
   </div>
   {% for workout in workouts %}
   <div class="card w-100 mb-3">
@@ -25,11 +29,25 @@
           Created On |
         </strong>{{workout.created_on}}
       </p>
-      <a href="#" class="btn btn-primary">Edit Details</a>
-      <a href="#" class="btn btn-primary">Delete</a>
+<p class="card-text created_on">
+        <strong>
+          Last Updated |
+        </strong>{{workout.updated_on}}
+      </p>
+      <a href="{% url 'view' %}" class="btn btn-primary">
+        <i class="fa-solid fa-eye"></i>
+        View Details
+      </a>
+      <a href="#" class="btn btn-primary">
+        <i class="fa-solid fa-trash"></i>
+        Delete
+      </a>
     </div>
   </div>
   {% endfor %}
-  <a href="#" class="btn btn-primary">Create New Workout</a>
-  <h2 class = "my-5">Progress Chart</h2>
+  <a href="#" class="btn btn-primary">
+    <i class="fa-solid fa-plus"></i>
+    Create New Workout
+  </a>
+  <h2 class="my-5">Progress Chart</h2>
   {% endblock %}

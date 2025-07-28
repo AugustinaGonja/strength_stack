@@ -20,8 +20,9 @@ class Login(TemplateView):
     template_name = "login.html"
 
 class ViewWorkout(ListView):
-    model = Workouts ,Exercise
+    model = Workouts
     template_name = "view.html"
+    context_object_name ='detail_view'
 
 class ErrorPage(TemplateView):
     template_name = "404.html" 
