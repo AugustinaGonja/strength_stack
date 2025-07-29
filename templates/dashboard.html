@@ -29,19 +29,24 @@
           Created On |
         </strong>{{workout.created_on}}
       </p>
-<p class="card-text created_on">
+      <p class="card-text created_on">
         <strong>
           Last Updated |
         </strong>{{workout.updated_on}}
       </p>
-      <a href="{% url 'view' workout.pk %}" class="btn btn-primary">
-        <i class="fa-solid fa-eye"></i>
-        View Details
-      </a>
-      <a href="{% url 'delete' workout.id %}" class="btn btn-danger">
-        <i class="fa-solid fa-trash"></i>
-        Delete
-      </a>
+      <div class = "d-flex ">
+        <a href="{% url 'view' workout.pk %}" class="btn btn-primary m-2">
+          <i class="fa-solid fa-eye"></i>
+          View Details
+        </a>
+        <form action="{% url 'delete' workout.id %}" method="post">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger m-2"
+            onclick="return confirm('Are you sure You want to Delete This Workout?')">
+            <i class="fa-solid fa-trash"></i> Delete
+          </button>
+        </form>
+      </div>
     </div>
   </div>
   {% endfor %}
