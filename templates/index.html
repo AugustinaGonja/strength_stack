@@ -2,9 +2,18 @@
 
 {% block content %}
 <div class="text-center position-absolute top-50 start-50 translate-middle">
+  {% if user.is_authenticated %}
+  <h1>Welcome to Your Personal Space !</h1>
+  <p>Hi {{user.username}} ,Update your profile, define your goals, and begin building workouts tailored to you.</p>
+  <a class="btn btn-primary mt-3"
+    href="{% url 'dashboard' %}">View My Dashboard</a>
+  {% else %}
   <h1>Welcome to StrengthStack</h1>
   <p>A fitness tracker built for growth. Log your workouts, measure your progress, and achieve your goals.</p>
   <a class="btn btn-primary mt-3 {% if request.path == signup_url %}active{% endif %}"
     href="{% url 'account_signup' %}">Get Started</a>
 </div>
+  {% endif %}
 {% endblock content %}
+
+
