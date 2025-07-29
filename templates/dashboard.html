@@ -34,7 +34,7 @@
           Last Updated |
         </strong>{{workout.updated_on}}
       </p>
-      <a href="{% url 'view' %}" class="btn btn-primary">
+      <a href="{% url 'view' workout.pk %}" class="btn btn-primary">
         <i class="fa-solid fa-eye"></i>
         View Details
       </a>
@@ -45,7 +45,7 @@
     </div>
   </div>
   {% endfor %}
-  <a href="{% url 'create.html' %}" class="btn btn-primary">
+  <a href="{% url 'create' %}" class="btn btn-primary">
     <i class="fa-solid fa-plus"></i>
     Create New Workout
   </a>
