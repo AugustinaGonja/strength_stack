@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
 from .models import Workouts 
+from .forms import NewWorkoutForm
 
 # Create your views here.
 def Home(request):
@@ -24,9 +25,19 @@ def ViewWorkout(request, pk):
     workout = get_object_or_404(Workouts, pk=pk, user=request.user)
     return render(request, "view.html", {"workout": workout})
 
-#def CreateView(request):
+def CreateWorkout(request):
+    if request.method == "POST":
+        form = NewWorkoutForm(request.POST)
+        if form.is_valid():
+            workout = form.save(commit=False)
+            workout.user = request.user
+            workout.save()
+            return redirect('dashboard')
+    else:
+        form = NewWorkoutForm()
+    return render(request, "create.html", {"form": form})
 
-def ErrorPage():
+#def ErrorPage():
     template_name = "404.html" 
 
 
