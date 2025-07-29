@@ -1,5 +1,7 @@
 from django.views.generic import ListView, TemplateView
+from django.views.generic.edit import CreateView
 from .models import Workouts ,  Exercise
+
 
 # Create your views here.
 class Home(TemplateView):
@@ -24,5 +26,17 @@ class ViewWorkout(ListView):
     template_name = "view.html"
     context_object_name ='detail_view'
 
+class CreateWorkout(CreateView):
+    model = Workouts
+    fields = ['title', 'description', 'training_split']
+    template_name = "create.html"
+    success_url = '/dashboard/'
+
+def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
 class ErrorPage(TemplateView):
     template_name = "404.html" 
+
+

@@ -6,4 +6,3 @@ class Profile(ListView):
     model = Profile
     template_name = "profile.html"
 
-
