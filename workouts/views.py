@@ -1,42 +1,32 @@
-from django.views.generic import ListView, TemplateView
-from django.views.generic.edit import CreateView
-from .models import Workouts ,  Exercise
-
+from django.shortcuts import render 
+from django.shortcuts import get_object_or_404
+from django.shortcuts import redirect
+from .models import Workouts 
 
 # Create your views here.
-class Home(TemplateView):
-    template_name = "index.html"
+def Home(request):
+    return render(request ,"index.html")
 
-class Dashboard(ListView):
-    model = Workouts
-    template_name = "dashboard.html"
-    context_object_name ='workouts'
+def Dashboard(request):
+    workouts = Workouts.objects.filter(user=request.user)
+    return render(request, "dashboard.html", {"workouts: workouts"})
 
-class About(TemplateView):
-    template_name = "about.html"
+def About(request):
+    return render(request, "about.html")
 
-class Register(TemplateView):
-    template_name = "registration.html"
+def Register(request):
+    return render(request, "registration.html")
 
-class Login(TemplateView):
-    template_name = "login.html"
+def Login(request):
+    return render(request, "login.html")
 
-class ViewWorkout(ListView):
-    model = Workouts
-    template_name = "view.html"
-    context_object_name ='detail_view'
+def ViewWorkout(request, pk):
+    workout = get_object_or_404(Workouts, pk=pk, user=request.user)
+    return render(request, "view.html", {"workout": workout})
 
-class CreateWorkout(CreateView):
-    model = Workouts
-    fields = ['title', 'description', 'training_split']
-    template_name = "create.html"
-    success_url = '/dashboard/'
+#def CreateView(request):
 
-def form_valid(self, form):
-        form.instance.user = self.request.user
-        return super().form_valid(form)
-
-class ErrorPage(TemplateView):
+def ErrorPage():
     template_name = "404.html" 
 
 
