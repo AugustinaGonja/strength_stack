@@ -2,10 +2,44 @@
 
 {% block content %}
 <div class="container m-4">
-<a href="{% url 'dashboard' %}" class="btn btn-primary">
+  <a href="{% url 'dashboard' %}" class="btn btn-primary">
     <i class="fa-solid fa-angles-left"></i>
     Return to Dashboard
   </a>
 </div>
-
+<div class="mx-auto p-2 w-75">
+  <h2>{{workout.title}}</h2>
+  <div class="card">
+    <div class="card-body">
+      <p class="card-text">
+        <strong>
+          Description |
+        </strong>
+        {{workout.description}}
+      </p>
+      <p class="card-text">
+        <strong>
+          Duration|
+        </strong>
+        {{workout.workout_duration}} mins
+      </p>
+      <p class="card-text">
+        <strong>
+          Created On|
+        </strong>
+        {{workout.created_on}}
+      </p>
+      <p class="card-text">
+        <strong>
+          Last Updated|
+        </strong>
+        {{workout.updated_on}}
+      </p>
+    </div>
+  </div>
+<h3 class=" border-bottom my-4">Exercises</h3>
+<a href="#" class="btn btn-primary mt-4">
+    <i class="fa-solid fa-plus"></i>
+    Add Exercise
+  </a>
 {% endblock %}
