@@ -34,7 +34,7 @@ class Workouts(models.Model):
 # Exercise
 
 class Exercise(models.Model):
-    workout = models.ForeignKey(Workouts, on_delete = models.CASCADE) 
+    workout = models.ForeignKey(Workouts, on_delete = models.CASCADE, related_name= 'exercises') 
     name = models.CharField(max_length= 100)
     training_style = models.CharField(max_length= 50 , choices= TRAINING_STYLE , default = "split")
     sets = models.PositiveIntegerField(default=4)

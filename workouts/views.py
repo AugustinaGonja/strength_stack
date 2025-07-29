@@ -22,8 +22,9 @@ def Login(request):
     return render(request, "login.html")
 
 def ViewWorkout(request, view_id):
-    workout = get_object_or_404(Workouts, id=view_id, user=request.user)
-    return render(request, "view.html", {"workout": workout})
+    workout = get_object_or_404(Workouts, id=view_id)
+    exercises = workout.exercises.all()
+    return render(request, "view.html", {"workout": workout, 'exercises':exercises})
 
 def CreateWorkout(request):
     if request.method == "POST":
