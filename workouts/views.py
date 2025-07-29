@@ -21,8 +21,8 @@ def Register(request):
 def Login(request):
     return render(request, "login.html")
 
-def ViewWorkout(request, pk):
-    workout = get_object_or_404(Workouts, pk=pk, user=request.user)
+def ViewWorkout(request, view_id):
+    workout = get_object_or_404(Workouts, id=view_id, user=request.user)
     return render(request, "view.html", {"workout": workout})
 
 def CreateWorkout(request):
@@ -39,7 +39,7 @@ def CreateWorkout(request):
 
 def DeleteWorkout(request, workout_id):
     if request.method == "POST":
-        workout = get_object_or_404(Workouts, id=workout_id)
+        workout = get_object_or_404(Workouts, id=workout_id ,user=request.user)
         workout.delete()
     return redirect('dashboard')
 
