@@ -38,6 +38,32 @@
     </div>
   </div>
 <h3 class=" border-bottom my-4">Exercises</h3>
+  {% for exercise in exercises %}
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Training Style</th>
+          <th scope="col">Sets</th>
+          <th scope="col">Reps</th>
+          <th scope="col">Weight</th>
+          <th scope="col">Units</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td scope="col">{{exercise.name}}</td>
+          <td scope="col">{{exercise.training_style}}</td>
+          <td scope="col">{{exercise.sets}}</td>
+          <th scope="col">{{exercise.reps}}</th>
+          <th scope="col">{{exercise.weight}}</th>
+          <th scope="col">{{exercise.units}}</th>
+          <th scope="col"></th>
+        </tr>
+      </tbody>
+    </table> 
+  {% endfor %}
 <a href="#" class="btn btn-primary mt-4">
     <i class="fa-solid fa-plus"></i>
     Add Exercise
