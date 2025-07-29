@@ -9,5 +9,6 @@ urlpatterns = [
     path('login/', views.Login, name='login'),
     path('view/<int:pk>/', views.ViewWorkout, name='view'),
     path('create/', views.CreateWorkout, name='create'),
+    path('delete/<int:workout_id>/', views.DeleteWorkout , name='delete'),
 ]
 

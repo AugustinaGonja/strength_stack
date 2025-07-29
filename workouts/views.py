@@ -37,7 +37,14 @@ def CreateWorkout(request):
         form = NewWorkoutForm()
         return render(request, "create.html", {"form": form})
 
+def DeleteWorkout(request, workout_id):
+    if request.method == "POST":
+        workout = get_object_or_404(Workouts, id=workout_id)
+        workout.delete()
+    return redirect('dashboard')
+
+#def UpdateWorkout(request):  
 #def ErrorPage():
-    template_name = "404.html" 
+   #template_name = "404.html" 
 
 
