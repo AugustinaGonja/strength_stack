@@ -1,12 +1,13 @@
-from django.urls import path
-from .views import Home, Dashboard , About, Register, Login, ViewWorkout,CreateWorkout 
+from django.urls import include, path
+from .import views
 
 urlpatterns = [
-    path('', Home.as_view(), name='home'),
-    path('dashboard/', Dashboard.as_view(), name='dash'),
-    path('about/', About.as_view(), name='about'),
-    path('registration/', Register.as_view(), name='register'),
-    path('login/', Login.as_view(), name='login'),
-    path('view/', ViewWorkout.as_view(), name='view'),
-    path('create/', CreateWorkout.as_view(), name='create'),
+    path('', views.Home, name='home'),
+    path('dashboard/', views.Dashboard, name='dash'),
+    path('about/', views.About, name='about'),
+    path('registration/', views.Register, name='register'),
+    path('login/', views.Login, name='login'),
+    path('view/', views.ViewWorkout, name='view'),
+    path('create/', views.CreateWorkout, name='create'),
 ]
+
