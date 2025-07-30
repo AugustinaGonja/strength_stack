@@ -10,5 +10,7 @@ urlpatterns = [
     path('view/<int:view_id>/', views.ViewWorkout, name='view'),
     path('create/', views.CreateWorkout, name='create'),
     path('delete/<int:workout_id>/', views.DeleteWorkout , name='delete'),
+    path('update_workout/<int:workout_id>/', views.UpdateWorkout , name='update_workout'),
+    path('update_exercise/<int:exercise_id>/', views.UpdateExercise , name='update_ex'),
 ]
 

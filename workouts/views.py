@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
 from .models import Workouts , Exercise
-from .forms import NewWorkoutForm
+from .forms import NewWorkoutForm , UpdateWorkoutForm, UpdateExerciseForm
 
 # Create your views here.
 def Home(request):
@@ -43,6 +43,18 @@ def DeleteWorkout(request, workout_id):
         workout = get_object_or_404(Workouts, id=workout_id ,user=request.user)
         workout.delete()
     return redirect('dashboard')
+
+def UpdateWorkout(request, workout_id):
+   workout = get_object_or_404(Workouts, id=workout_id)
+   form = UpdateWorkoutForm()
+   return render (request, "update_workout.html", {"workout": workout})
+    
+def UpdateExercise(request, exercise_id):
+   exercise = get_object_or_404(Exercise, id=exercise_id)
+   form = UpdateExerciseForm()
+   return render (request, "update_exercise.html", {"exercise": exercise})
+
+
 
 #def UpdateWorkout(request):  
 #def ErrorPage():
