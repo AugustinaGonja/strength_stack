@@ -1,4 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="container m-4">
+<a href="{% url 'dashboard' %}" class="btn btn-primary">
+    <i class="fa-solid fa-angles-left"></i>
+    Return to My Dashboard
+  </a>
+</div>
+<h2>Edit Workout</h2>
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p }}
+  <button type="submit" class="btn btn-primary m-4">Save Exercise</button>
+</form>
 {% endblock content %}
