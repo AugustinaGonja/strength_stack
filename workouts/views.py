@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
 from .models import Workouts , Exercise
-from .forms import NewWorkoutForm , UpdateWorkoutForm, UpdateExerciseForm
+from .forms import NewWorkoutForm , UpdateWorkoutForm, ExerciseForm
 
 # Create your views here.
 def Home(request):
@@ -53,17 +53,31 @@ def UpdateWorkout(request, workout_id):
             return redirect('dashboard')
     else:
         form = UpdateWorkoutForm(instance=workout)
-    return render(request, "update_workout.html", {"form": form})
+        return render(request, "update_workout.html", {"form": form})
+
+def AddExercise(request, workout_id):
+    workout = get_object_or_404(Workouts, id=workout_id)
+
+    if request.method == "POST":
+        form = ExerciseForm(request.POST)
+        if form.is_valid():
+            exercise = form.save(commit=False)
+            exercise.workout = workout
+            exercise.save()
+            return redirect('view',view_id=workout.id)
+    else:
+        form = ExerciseForm()
+        return render(request, "add_exercise.html", {"form": form, "workout": workout})
 
 def UpdateExercise(request, exercise_id):
     exercise = get_object_or_404(Exercise, id=exercise_id)
     if request.method == "POST":
-        form = UpdateExerciseForm(request.POST, instance=exercise)
+        form = ExerciseForm(request.POST, instance=exercise)
         if form.is_valid():
             form.save()
             return redirect('view',view_id=exercise.workout.id)
     else:
-        form = UpdateExerciseForm(instance=exercise)
+        form = ExerciseForm(instance=exercise)
     return render(request, "update_exercise.html", {"form": form})
 
 #def UpdateWorkout(request):  
