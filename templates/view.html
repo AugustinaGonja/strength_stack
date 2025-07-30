@@ -80,7 +80,7 @@
   {% else %}
   <p>No Exercises Added yet !<br> Add New Exercises Below.</p>
   {% endif %}
-  <a href="#" class="btn btn-primary mt-4">
+  <a href="{% url 'add_ex' workout.id %}" class="btn btn-primary mt-4">
     <i class="fa-solid fa-plus"></i>
     Add Exercise
   </a>
