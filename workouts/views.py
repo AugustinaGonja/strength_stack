@@ -45,16 +45,26 @@ def DeleteWorkout(request, workout_id):
     return redirect('dashboard')
 
 def UpdateWorkout(request, workout_id):
-   workout = get_object_or_404(Workouts, id=workout_id)
-   form = UpdateWorkoutForm(request.POST  or None, instance=workout)
-   return render (request, "update_workout.html", {"workout": workout,"form": form})
-    
+    workout = get_object_or_404(Workouts, id=workout_id)
+    if request.method == "POST":
+        form = UpdateWorkoutForm(request.POST, instance=workout)
+        if form.is_valid():
+            form.save()
+            return redirect('dashboard')
+    else:
+        form = UpdateWorkoutForm(instance=workout)
+    return render(request, "update_workout.html", {"form": form})
+
 def UpdateExercise(request, exercise_id):
-   exercise = get_object_or_404(Exercise, id=exercise_id)
-   form = UpdateExerciseForm(request.POST or None, instance=exercise)
-   return render (request, "update_exercise.html", {"exercise": exercise, "form": form})
-
-
+    exercise = get_object_or_404(Exercise, id=exercise_id)
+    if request.method == "POST":
+        form = UpdateExerciseForm(request.POST, instance=exercise)
+        if form.is_valid():
+            form.save()
+            return redirect('view',view_id=exercise.workout.id)
+    else:
+        form = UpdateExerciseForm(instance=exercise)
+    return render(request, "update_exercise.html", {"form": form})
 
 #def UpdateWorkout(request):  
 #def ErrorPage():
