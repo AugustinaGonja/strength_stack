@@ -1,16 +1,26 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
 
 {% block content %}
 <div class="container m-4">
-<a href="{% url 'dashboard' %}" class="btn btn-primary">
+  <a href="{% url 'dashboard' %}" class="btn btn-primary">
     <i class="fa-solid fa-angles-left"></i>
     Return to Dashboard
   </a>
 </div>
-<h2>Create New Workout</h2>
-<form method="post">
-    {% csrf_token %}
-    {{form.as_p }}
-  <button type="submit" class="btn btn-primary m-4">Save Workout</button>
-</form>
+<div class="row justify-content-center mb-4">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="text-center">Create New Workout</h2>
+        <form method="post">
+          {% csrf_token %}
+          {{ form|crispy }}
+          <button type="submit" class="btn btn-primary my-4">Save Workout</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock content %}
