@@ -68,10 +68,13 @@
           </a>
         </td>
         <td scope="col">
-          <a href="#" class="btn btn-danger">
-            <i class="fa-solid fa-trash"></i>
-            Delete
-          </a>
+          <form action="{% url 'delete_ex' exercise.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger"
+              onclick="return confirm('Are you sure You want to Delete This Workout?')">
+              <i class="fa-solid fa-trash"></i> Delete
+            </button>
+          </form>
         </td>
       </tr>
       {% endfor %}
