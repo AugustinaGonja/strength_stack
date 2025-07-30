@@ -48,6 +48,8 @@
         <th scope="col">Sets</th>
         <th scope="col">Reps</th>
         <th scope="col">Weight (kg) </th>
+        <th scope="col"></th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -59,6 +61,18 @@
         <td scope="col">{{exercise.sets}}</td>
         <td scope="col">{{exercise.reps}}</td>
         <td scope="col">{{exercise.weight}}</td>
+        <td scope="col">
+          <a href="{% url 'update_ex' exercise.id %}" class="btn btn-success">
+            <i class="fa-solid fa-pen"></i>
+            Update
+          </a>
+        </td>
+        <td scope="col">
+          <a href="#" class="btn btn-danger">
+            <i class="fa-solid fa-trash"></i>
+            Delete
+          </a>
+        </td>
       </tr>
       {% endfor %}
     </tbody>
