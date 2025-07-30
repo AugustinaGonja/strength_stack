@@ -40,9 +40,15 @@ def CreateWorkout(request):
 
 def DeleteWorkout(request, workout_id):
     if request.method == "POST":
-        workout = get_object_or_404(Workouts, id=workout_id ,user=request.user)
+        workout = get_object_or_404(Workouts, id=workout_id)
         workout.delete()
     return redirect('dashboard')
+
+def DeleteExercise(request, exercise_id):
+    if request.method == "POST":
+        exercise = get_object_or_404(Exercise, id=exercise_id)
+        exercise.delete()
+    return redirect('view',view_id=exercise.workout.id) 
 
 def UpdateWorkout(request, workout_id):
     workout = get_object_or_404(Workouts, id=workout_id)
@@ -79,6 +85,7 @@ def UpdateExercise(request, exercise_id):
     else:
         form = ExerciseForm(instance=exercise)
     return render(request, "update_exercise.html", {"form": form})
+
 
 #def UpdateWorkout(request):  
 #def ErrorPage():
