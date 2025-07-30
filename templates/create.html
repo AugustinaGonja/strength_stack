@@ -17,7 +17,10 @@
         <form method="post">
           {% csrf_token %}
           {{ form|crispy }}
-          <button type="submit" class="btn btn-primary my-4">Save Workout</button>
+          <button type="submit" class="btn btn-primary my-4">
+            <i class="fa-solid fa-floppy-disk"></i>
+            Save Workout
+          </button>
         </form>
       </div>
     </div>
