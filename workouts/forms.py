@@ -1,7 +1,17 @@
 from django import forms 
-from .models import Workouts
+from .models import Workouts , Exercise
 
 class NewWorkoutForm(forms.ModelForm):
     class Meta:
         model = Workouts
+        fields =['title', 'description', 'training_split']
+
+class UpdateWorkoutForm(forms.ModelForm):
+    class Meta:
+        model = Workouts
+        fields =['title', 'description', 'training_split']
+
+class UpdateExerciseForm(forms.ModelForm):
+    class Meta:
+        model = Exercise
         fields =['title', 'description', 'training_split']
