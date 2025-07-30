@@ -11,7 +11,7 @@ class UpdateWorkoutForm(forms.ModelForm):
         model = Workouts
         fields =['title', 'description', 'training_split']
 
-class UpdateExerciseForm(forms.ModelForm):
+class ExerciseForm(forms.ModelForm):
     class Meta:
         model = Exercise
         fields =['name', 'training_style', 'sets', 'reps','weight','units']
