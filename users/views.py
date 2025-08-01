@@ -3,6 +3,6 @@ from .models import Profile
 
 # Create your views here.
 def UserProfile(request):
-    profile = get_object_or_404(Profile, user=request.user)
-    return render(request, "profile.html", {"profile": profile})
+    user_info = Profile.objects.get(user=request.user)
+    return render(request, "profile.html", {'user_info': user_info})
 
