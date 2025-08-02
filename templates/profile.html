@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="d-flex flex-row">
+<div class="container d-flex flex-row flex-column flex-md-row">
     <div class="d-flex p-2 flex-column ">
         <div class="card mb-3">
             <div class="card-body">
+                <a href="#" class="btn btn-success">
+                    <i class="fa-solid fa-pen"></i>
+                    Edit Profile
+                </a>
                 <h4 class="card-title text-center">User Profile</h4>
             </div>
         </div>
@@ -15,9 +19,7 @@
                 <p><strong> Name | </strong>{{user.username}}</p>
                 <p><strong> Age | </strong>{{ user_info.age }} Years</p>
                 <p><strong> Gender | </strong>{{ user_info.gender }}</p>
-                <p>
-                    <strong> Current Weight (kg) | </strong>{{ user_info.current_weight }}
-                </p>
+                <p><strong> Current Weight (kg) | </strong>{{ user_info.current_weight }}</p>
                 <p><strong> Goal Weight (kg) | </strong>{{ user_info.goal_weight }}</p>
             </div>
         </div>
