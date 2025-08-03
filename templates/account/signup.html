@@ -1,23 +1,33 @@
 {% extends "base.html" %}
 
 {% load i18n %}
-
 {% block head_title %}{% trans "Signup" %}{% endblock head_title %}
 
+{% load crispy_forms_tags %}
+
 {% block content %}
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  <h2>Sign Up</h2>
-  <p>Already have an account? Then please
-    <a href="{% url 'account_login' %}">Sign In</a>
-  </p>
-  {% csrf_token %}
-  {{ form.as_p }}
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" id="gridCheck1">
-    <label class="form-check-label" for="gridCheck1">
-      Remember Me
-    </label>
+
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+          <h2>Sign Up</h2>
+          <p>Already have an account? Then please
+            <a href="{% url 'account_login' %}">Sign In</a>
+          </p>
+          {% csrf_token %}
+          {{ form|crispy }}
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck1">
+            <label class="form-check-label" for="gridCheck1">
+              Remember Me
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary my-3">Sign in</button>
+        </form>
+      </div>
+    </div>
   </div>
-  <button type="submit" class="btn btn-primary">Sign in</button>
-</form>
+</div>
 {% endblock content %}
