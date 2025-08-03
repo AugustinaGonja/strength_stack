@@ -1,35 +1,35 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <a href="{% url 'update_profile' %}" class="btn btn-success mb-3">
+                        <i class="fa-solid fa-pen"></i>
+                        Edit Profile
+                    </a>
+                    <h4 class="card-title text-center">User Profile</h4>
+                </div>
+            </div>
 
-{% block content %}
-<div class="container d-flex flex-row flex-column flex-md-row">
-    <div class="d-flex p-2 flex-column " >
-        <div class="card mb-3">
-            <div class="card-body">
-                <a href="{% url 'update_profile' %}" class="btn btn-success">
-                    <i class="fa-solid fa-pen"></i>
-                    Edit Profile
-                </a>
-                <h4 class="card-title text-center">User Profile</h4>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title border-bottom">User Information</h5>
+                    <p><strong> Name : </strong>{{user.username}}</p>
+                    <p><strong> Age : </strong>{{ user_info.age }} Years</p>
+                    <p><strong> Gender : </strong>{{ user_info.gender }}</p>
+                    <p><strong> Current Weight (kg) : </strong>{{ user_info.current_weight }}</p>
+                    <p><strong> Goal Weight (kg) : </strong>{{ user_info.goal_weight }}</p>
+                </div>
             </div>
         </div>
-
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">User Information |</h5>
-                <p><strong> Name | </strong>{{user.username}}</p>
-                <p><strong> Age | </strong>{{ user_info.age }} Years</p>
-                <p><strong> Gender | </strong>{{ user_info.gender }}</p>
-                <p><strong> Current Weight (kg) | </strong>{{ user_info.current_weight }}</p>
-                <p><strong> Goal Weight (kg) | </strong>{{ user_info.goal_weight }}</p>
+        <div class="col-md-8">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title border-bottom">Bio</h5>
+                    <p class="card-text">{{ user_info.bio }}</p>
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="card m-2">
-        <div class="card-body">
-            <h5 class="card-title">Bio | </h5>
-            <p class="card-text">{{ user_info.bio }}</p>
-        </div>
-    </div>
-</div>
-{% endblock %}
+    {% endblock %}
