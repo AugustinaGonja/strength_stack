@@ -4,7 +4,7 @@
 <div class="text-center position-absolute top-50 start-50 translate-middle">
   {% if user.is_authenticated %}
   <h1>Welcome to Your Personal Space !</h1>
-  <p>Hi {{user.username}} ,Update your profile, define your goals, and begin building workouts tailored to you.</p>
+  <p>Hi {{user.username}} , update your profile, define your goals, and begin building workouts tailored to you.</p>
   <a class="btn btn-primary mt-3"
     href="{% url 'dashboard' %}">View My Dashboard</a>
   {% else %}
