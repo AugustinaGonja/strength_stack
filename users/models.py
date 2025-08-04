@@ -2,9 +2,9 @@ from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 GENDER = [
-    ('male', 'MALE'),
-    ('female', 'FEMALE'),
-    ('other', 'OTHER'),
+    ('Male', 'MALE'),
+    ('Female', 'FEMALE'),
+    ('Other', 'OTHER'),
 ]
 
 UNITS = [
@@ -19,6 +19,7 @@ class Profile(models.Model):
     goal_weight = models.PositiveIntegerField(default=55)
     units = models.PositiveIntegerField(default=1, choices = UNITS,)
     bio = models.TextField(default= 'Provide description about yourself and your fitness goals.')
+    profile_image = models.ImageField(null=True , blank =True, upload_to ="images/")
 
     def __str__(self):
         return f"{self.user}'s Profile"
