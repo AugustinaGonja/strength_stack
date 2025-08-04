@@ -12,7 +12,7 @@ def UserProfile(request):
 def UpdateProfile(request):
     user_info = Profile.objects.get(user=request.user)
     if request.method == "POST":
-        form = ProfileForm(request.POST, instance=user_info)
+        form = ProfileForm(request.POST,request.FILES, instance=user_info)
         if form.is_valid():
             form.save()
             return redirect ('profile')
