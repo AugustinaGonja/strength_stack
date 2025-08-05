@@ -14,7 +14,7 @@
         <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
           <h2>Sign Up</h2>
           <p>Already have an account? Then please
-            <a href="{% url 'account_login' %}">Sign In</a>
+            <a class="acc-login" href="{% url 'account_login' %}">Sign In</a>
           </p>
           {% csrf_token %}
           {{ form|crispy }}
@@ -24,7 +24,7 @@
               Remember Me
             </label>
           </div>
-          <button type="submit" class="btn btn-primary my-3">Sign in</button>
+          <button type="submit" class="btn btn-primary my-3">Register</button>
         </form>
       </div>
     </div>
