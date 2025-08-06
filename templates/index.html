@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
+<img class="hero" src="{% static 'images\Hero Image.jpg' %}" alt = "Hero Image">
 <div class="text-center position-absolute top-50 start-50 translate-middle">
   {% if user.is_authenticated %}
   <h1>Welcome to Your Personal Space !</h1>

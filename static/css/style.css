@@ -34,7 +34,9 @@ nav {
 .nav-link:hover {
   color: #f21137 !important;
 }
-.logo {
+h2,
+.logo,
+.social {
   color: #f21137;
 }
 
@@ -58,48 +60,61 @@ nav {
   color: #f21137;
 }
 
-.main-text,.copyright {
+.main-text,
+.copyright {
   font-size: 14px;
   margin: 0;
 }
-.social {
-  color: #f21137;
-}
+
 /*Nav-Toggle*/
-.navbar-toggler{
+.navbar-toggler {
   background-color: #f21137;
 }
 /*Headers*/
-h1{
+h1 {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 30px;
 }
-h2{
-  color: #f21137;
-}
 
 /*Account*/
-.acc-login{
+.acc-login {
   color: #f21137;
   font-weight: 500;
 }
 
-.acc-signout{
+.acc-signout {
   text-transform: uppercase;
   background-color: #f21137;
-  font-weight: 500
+  font-weight: 500;
 }
 
 /*Dashboard*/
-.view-btn{
+.view-btn {
   text-transform: capitalize;
   background-color: #0710bc;
   color: #fffffe;
 }
 
-.view-btn:hover{
+.view-btn:hover {
   background-color: #0710bc;
   color: #fffffe;
   filter: brightness(90%);
+}
+
+/*images*/
+
+.hero {
+  height: 80vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: opacity(50%);
+  
+}
+
+.features{
+    width: 100%;
+    filter: grayscale(50%)
 }
