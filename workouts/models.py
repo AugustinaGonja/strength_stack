@@ -23,7 +23,7 @@ class Workouts(models.Model):
     user = models.ForeignKey(User, on_delete = models.CASCADE) 
     title = models.CharField(max_length= 200)
     workout_duration = models.PositiveIntegerField(default= 120 ,null=True , blank=True)
-    training_split = models.CharField(max_length= 200, default='Enter Split')
+    training_split = models.CharField(max_length= 200, default='e.g Upper Body, Lower Body , PPL')
     description = models.TextField(default='Enter Short Description', blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
