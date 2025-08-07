@@ -9,7 +9,7 @@ def Home(request):
     return render(request ,"index.html")
 
 def Dashboard(request):
-    workouts = Workouts.objects.all()
+    workouts = Workouts.objects.all().order_by('-updated_on')
     return render(request, "dashboard.html", {"workouts": workouts})
 
 def About(request):
@@ -23,7 +23,7 @@ def Login(request):
 
 def ViewWorkout(request, view_id):
     workout = get_object_or_404(Workouts, id=view_id)
-    exercises = workout.exercises.all()
+    exercises = workout.exercises.all().order_by('-updated_on')
     return render(request, "view.html", {"workout": workout, 'exercises':exercises})
 
 def CreateWorkout(request):

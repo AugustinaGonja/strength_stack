@@ -7,6 +7,10 @@
       <strong> {{ user.username }}! </strong>
     </h2>
   </div>
+  <a href="{% url 'create' %}" class="btn btn-primary mb-4">
+    <i class="fa-solid fa-plus"></i>
+    Create New Workout
+  </a>
   {% for workout in workouts %}
   <div class="card w-100 mb-3">
     <div class="card-body">
@@ -45,10 +49,5 @@
     </div>
   </div>
   {% endfor %}
-  <a href="{% url 'create' %}" class="btn btn-primary mt-4">
-    <i class="fa-solid fa-plus"></i>
-    Create New Workout
-  </a>
-  <h2 class="my-5">Progress Chart</h2>
 </div>
 {% endblock %}
