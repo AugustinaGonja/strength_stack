@@ -111,10 +111,9 @@ h1 {
   background-repeat: no-repeat;
   background-size: cover;
   filter: opacity(50%);
-  
 }
 
-.features{
-    width: 100%;
-    filter: grayscale(50%)
+.features {
+  width:150px;
+  height:150px ;
 }
