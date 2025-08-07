@@ -11,6 +11,7 @@
     <i class="fa-solid fa-plus"></i>
     Create New Workout
   </a>
+  {% if workouts %}
   {% for workout in workouts %}
   <div class="card w-100 mb-3">
     <div class="card-body">
@@ -27,10 +28,13 @@
       <p class="card-text split">
         <strong> Training Split | </strong>{{workout.training_split}}
       </p>
+      <p class="card-text duration">
+        <strong> Workout Duration | </strong>{{workout.workout_duration}} mins
+      </p>
       <p class="card-text created_on">
         <strong> Created On | </strong>{{workout.created_on}}
       </p>
-      <p class="card-text created_on">
+      <p class="card-text updated_on">
         <strong> Last Updated | </strong>{{workout.updated_on}}
       </p>
       <div class="d-flex">
@@ -41,7 +45,7 @@
         <form action="{% url 'delete' workout.id %}" method="post">
           {% csrf_token %}
           <button type="submit" class="btn btn-danger m-2"
-            onclick="return confirm('Are you sure You want to Delete This Workout?')">
+            onclick="return confirm('Are You Sure You want To Delete This Workout?')">
             <i class="fa-solid fa-trash"></i> Delete
           </button>
         </form>
@@ -49,5 +53,10 @@
     </div>
   </div>
   {% endfor %}
+  {% else %}
+  <p>
+    No Workouts Added yet !
+  </p>
+  {% endif %}
 </div>
 {% endblock %}

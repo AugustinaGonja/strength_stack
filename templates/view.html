@@ -62,7 +62,7 @@
           <form action="{% url 'delete_ex' exercise.id %}" method="post">
             {% csrf_token %}
             <button type="submit" class="btn btn-danger"
-              onclick="return confirm('Are you sure You want to Delete This Workout?')">
+              onclick="return confirm('Are You Sure You Want to Delete This Exercise?')">
               <i class="fa-solid fa-trash"></i> Delete
             </button>
           </form>
