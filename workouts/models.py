@@ -40,7 +40,7 @@ class Exercise(models.Model):
     sets = models.PositiveIntegerField(default=4)
     reps = models.PositiveIntegerField(default=12)
     weight = models.PositiveIntegerField(default=12)
-    units = models.CharField(choices= UNITS ,default= 'kg or lbs')
+    units = models.CharField(max_length=20, choices= UNITS ,default= 'kg or lbs')
     updated_on = models.DateTimeField(auto_now=True)
     
     def __str__(self):

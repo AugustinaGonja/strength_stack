@@ -14,7 +14,7 @@ UNITS = [
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete = models.CASCADE) 
     age = models.PositiveIntegerField(default= 24)
-    gender = models.CharField(max_length= 50 , choices= GENDER ,  default = "male")
+    gender = models.CharField(max_length= 50 , choices= GENDER ,  default = "Male")
     current_weight = models.PositiveIntegerField(default=64)
     goal_weight = models.PositiveIntegerField(default=55)
     units = models.PositiveIntegerField(default=1, choices = UNITS,)
