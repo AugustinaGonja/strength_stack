@@ -14,5 +14,6 @@ urlpatterns = [
     path('update_exercise/<int:exercise_id>/', views.UpdateExercise , name='update_ex'),
     path('add_exercise/<int:workout_id>/', views.AddExercise , name='add_ex'),
     path('delete_exercise/<int:exercise_id>/', views.DeleteExercise , name='delete_ex'),
+    path('404/', views.ErrorPage , name='404'),
 ]
 

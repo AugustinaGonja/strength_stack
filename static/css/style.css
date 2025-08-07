@@ -29,7 +29,7 @@ nav {
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 500;
-  color: white !important;
+  color: #fffffe !important;
 }
 .nav-link:hover {
   color: #f21137 !important;

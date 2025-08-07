@@ -86,9 +86,7 @@ def UpdateExercise(request, exercise_id):
         form = ExerciseForm(instance=exercise)
     return render(request, "update_exercise.html", {"form": form})
 
-
-#def UpdateWorkout(request):  
-#def ErrorPage():
-   #template_name = "404.html" 
+def ErrorPage(request):
+   return render(request ,"404.html")
 
 

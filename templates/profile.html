@@ -12,9 +12,9 @@
         </div>
         <div>
           {% if user_info.profile_image %}
-          <img class="card-img" src="{{ user_info.profile_image.url }}" />
+            <img class="card-img" src="{{ user_info.profile_image.url }}" alt= "User Profile Image">
           {% else %}
-          <img class="card-img" src="{%static 'images/Default Profile.png'%}" />
+            <img class="card-img" src="{% static 'images/Default Profile.jpeg' %}" alt= "Default User Profile Image">
           {% endif %}
         </div>
       </div>
