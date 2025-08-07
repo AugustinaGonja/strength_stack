@@ -1,8 +1,5 @@
-{% load static %}
-
-{% url 'account_login' as login_url %}
-{% url 'account_signup' as signup_url %}
-{% url 'account_logout' as logout_url %}
+{% load static %} {% url 'account_login' as login_url %} {% url 'account_signup'
+as signup_url %} {% url 'account_logout' as logout_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -65,9 +62,10 @@
         <div class="container">
             <div>
                 <h4 class="f-text">StrengthStack</h4>
-                <p class="main-text">A fitness tracker built for growth - log workouts, measure progress, and achieve
-                    your
-                    goals with precision.</p>
+                <p class="main-text">
+                    A fitness tracker built for growth - log workouts, measure progress,
+                    and achieve your goals with precision.
+                </p>
             </div>
             <div class="container-fluid d-flex justify-content-around">
                 <a class="navbar-brand social" href="https://en-gb.facebook.com/" target="_blank" rel="noopener">
@@ -90,5 +88,4 @@
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
 </body>
-
 </html>

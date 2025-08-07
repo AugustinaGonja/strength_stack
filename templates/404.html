@@ -1,13 +1,15 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 <img class="hero" src="{% static 'images\Hero Image.jpg' %}" alt="Hero Image">
-<div class="card text-center position-absolute top-50 start-50 translate-middle">
-    <div class="card-body">
-        <h5 class="card-title">404</h5>
-        <h6 class="card-subtitle mb-2 text-body-secondary">Page Not Found !</h6>
-        <p class="card-text">The page you're looking for doesn't exist.<br>Click below to return to homepage.</p>
-        <a class="btn btn-primary" href="{% url 'home' %}">Return to Homepage</a>
-    </div>
+<div
+  class="card text-center position-absolute top-50 start-50 translate-middle">
+  <div class="card-body">
+    <h5 class="card-title">404</h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary">Page Not Found !</h6>
+    <p class="card-text">
+      The page you're looking for doesn't exist.<br>Click below to return to
+      homepage.
+    </p>
+    <a class="btn btn-primary" href="{% url 'home' %}">Return to Homepage</a>
+  </div>
 </div>
 {% endblock %}
