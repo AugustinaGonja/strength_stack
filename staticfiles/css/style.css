@@ -1,0 +1,119 @@
+/*Google Fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/*Body*/
+
+body {
+  font-family: Montserrat, Inter, sans-serif;
+}
+
+/*Navigation Bar*/
+nav {
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  background-color: #1e1e1e !important;
+}
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #f21137;
+}
+
+.navbar-brand:hover {
+  color: #f21137;
+}
+.nav-link {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fffffe !important;
+}
+.nav-link:hover {
+  color: #f21137 !important;
+}
+h2,
+.logo,
+.social {
+  color: #f21137;
+}
+
+.btn-primary {
+  background-color: #f21137 !important;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background-color: #f21137;
+  filter: brightness(80%);
+}
+/*Footer*/
+.f-text {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 700;
+  color: #f21137;
+}
+
+.main-text,
+.copyright {
+  font-size: 14px;
+  margin: 0;
+}
+
+/*Nav-Toggle*/
+.navbar-toggler {
+  background-color: #f21137;
+}
+/*Headers*/
+h1 {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+/*Account*/
+.acc-login {
+  color: #f21137;
+  font-weight: 500;
+}
+
+.acc-signout {
+  text-transform: uppercase;
+  background-color: #f21137;
+  font-weight: 500;
+}
+
+/*Dashboard*/
+.view-btn {
+  text-transform: capitalize;
+  background-color: #0710bc;
+  color: #fffffe;
+}
+
+.view-btn:hover {
+  background-color: #0710bc;
+  color: #fffffe;
+  filter: brightness(90%);
+}
+
+/*images*/
+
+.hero {
+  height: 80vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: opacity(50%);
+}
+
+.features {
+  width:150px;
+  height:150px ;
+}
