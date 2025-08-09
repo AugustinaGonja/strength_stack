@@ -1,9 +1,11 @@
 from django.test import TestCase
-from .forms import NewWorkoutForm , UpdateWorkoutForm, ExerciseForm
+from .forms import NewWorkoutForm, UpdateWorkoutForm, ExerciseForm
 
 # Create your tests here.
 
-# Form Testing 
+# Form Testing
+
+
 class TestNewWorkoutForm(TestCase):
 
     def test_form_is_valid(self):
@@ -32,6 +34,7 @@ class TestNewWorkoutForm(TestCase):
         self.assertFalse(form.is_valid())
         self.assertIn('description', form.errors)
 
+
 class TestExerciseForm(TestCase):
     def test_form_is_valid(self):
         form = ExerciseForm(data={
@@ -39,16 +42,17 @@ class TestExerciseForm(TestCase):
             'training_style': 'straightsets',
             'sets': 4,
             'reps': 12,
-            'weight' : 10
+            'weight': 10
         })
         self.assertTrue(form.is_valid())
+
     def test_integer_fields_empty(self):
         form = ExerciseForm(data={
             'name': 'Bicep Curls',
             'training_style': 'straightsets',
             'sets': '',
             'reps': '',
-            'weight' : ''
+            'weight': ''
         })
         self.assertFalse(form.is_valid())
         self.assertIn('sets', form.errors)
