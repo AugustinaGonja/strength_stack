@@ -27,7 +27,7 @@
 **[Solved & Known Bugs ](#solved--known-bugs)**
 
 ---
-Chrome DevTools was incredibly helpful throughout the testing process, enabling quick troubleshooting. While building the website, I kept track of bugs as they arose.
+Chrome DevTools was incredibly helpful throughout the testing process, enabling quick troubleshooting.<br>While building the website, I kept track of bugs as they arose.
 
 I also attempted to use Django Testing , to build automated tests for my forms .
 
@@ -40,7 +40,7 @@ The W3C Validator was used to check and validate the HTML and CSS for all pages 
 * [About Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Fabout%2F) - No errors or warnings.
 * [Login Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Faccounts%2Flogin%2F) - No errors or warnings.
 * [Registration Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Faccounts%2Fsignup%2F) - No errors or warnings.
-* [Profile Page]() - 500 Internal Server Error
+* [Profile Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Fusers%2Fprofile%2F) - 500 Internal Server Error
 * [Update Profile Page]()-  500 Internal Server Error
 * [Dashboard](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Fdashboard%2F) - No errors or warnings.
 * [Update Workout Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Fupdate_workout%2F16%2F) -No errors or warnings.
@@ -55,7 +55,6 @@ The W3C Validator was used to check and validate the HTML and CSS for all pages 
 
 ### Python Validator
 To validate all my Python code, I used the Code Institute [Python Linter](https://pep8ci.herokuapp.com/).<br>
-Most of my code passed without issues, except for line length.
 
 **"workouts" App :**
 
@@ -65,8 +64,6 @@ Most of my code passed without issues, except for line length.
 * [test_forms.py](staticfiles/images/TESTING%20images/test-workouts-PL.png)
 * [urls.py](staticfiles/images/TESTING%20images/urls-workouts-PL.png)
 * [views.py](staticfiles/images/TESTING%20images/views-workouts-PL.png) 
-    * **"E231 missing whitespace after '"**<br>
-    I don’t understand this error since all unnecessary whitespace has been removed.
 
 **"users" App :**
 
