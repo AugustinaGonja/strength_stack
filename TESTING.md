@@ -6,7 +6,7 @@
 
 ## Contents
 **[Automated Testing](#automated-testing)**
-* [W3C Validator](#wc3-html-validator)
+* [W3C Validator](#wc3-html--css-validator)
 * [Python Validator](#wc3-html-validator)
 * [Django Testing](#django-testing)
 
@@ -32,7 +32,7 @@ Chrome DevTools was incredibly helpful throughout the testing process, enabling 
 I also attempted to use Django Testing , to build automated tests for my forms .
 
 ## Automated Testing
-### WC3 HTML Validator
+### WC3 HTML & CSS Validator
 The W3C Validator was used to check and validate the HTML and CSS for all pages of the website. Validation was performed by directly entering each page’s web link into the tool.
 
 * [Home Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2F) - No errors or warnings.
@@ -48,9 +48,8 @@ The W3C Validator was used to check and validate the HTML and CSS for all pages 
 * [Workout Details Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Fview%2F16%2F) - No errors or warnings.
 * [Update Exercise Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Fupdate_exercise%2F24%2F) - No errors or warnings.
 * [Create Exercise Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Fadd_exercise%2F13%2F) - No errors or warnings.
-* [Logout Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Faccounts%2Flogout%2F)
-* [404 Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Faccountsss%2Flogout%2F) - There are no other errors; the validator simply identified the 404 page.
-
+* [Logout Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Faccounts%2Flogout%2F) - No errors or warnings.
+* [404 Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Faccountsss%2Flogout%2F) - There are no other errors; the validator simply identified the 404 page.<br>
 * [CSS Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 ### Python Validator
