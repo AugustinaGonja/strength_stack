@@ -11,7 +11,7 @@
 * [Django Testing](#django-testing)
 
 
-**[Performance Testing](#performance-testing-lighthouse)**
+**[Performance Testing ( Wave & Lighthouse )](#performance-testing-lighthouse)**
 * [Desktop](#desktop)
 * [Mobile](#mobile)
 
