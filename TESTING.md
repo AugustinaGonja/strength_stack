@@ -275,6 +275,7 @@ I tested the website across the following devices and browsers, and it displayed
 | No | Bug | Issue |
 | :--- | :--- | :--- |
 | 1 | On the login page, if you refresh after receiving an invalid username or password error, the error message should disappear - but currently, it remains displayed.<br>[Login](staticfiles/images/TESTING%20images/Login%20Error.png)| X |
-| 2 | The "Remember me" on the Login and Registration page box does not save account details.| X |
+| 2 | When a user creates a new profile, then tries to edit and save it, a server 500 error occurs unexpectedly. This functionality was working previously.| X |
+| 3 | The "Remember me" on the Login and Registration page box does not save account details.| X |
 ---
 [Back to the Top](#strengthstack---testing)
