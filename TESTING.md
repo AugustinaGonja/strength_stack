@@ -1,6 +1,6 @@
 ## STRENGTHSTACK - Testing
 
-![Amiresponsive Image showing StrenthStack as displayed on multiple screen sizes](staticfiles/images/README%20images/Responsiveness.png)
+![Image showing StrenthStack as displayed on multiple screen sizes](staticfiles/images/README%20images/Responsiveness.png)
 
 [Link to deployed StrengthStack Website](https://strength-stack-e65fe8f9116b.herokuapp.com/)
 
