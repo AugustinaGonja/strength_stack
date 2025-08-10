@@ -6,12 +6,12 @@ from .forms import ProfileForm
 
 
 def UserProfile(request):
-    user_info = Profile.objects.get(user=request.user)
+    user_info = Profile.objects.filter(user=request.user)
     return render(request, "profile.html", {'user_info': user_info})
 
 
 def UpdateProfile(request):
-    user_info = Profile.objects.get(user=request.user)
+    user_info = Profile.objects.filter(user=request.user)
     if request.method == "POST":
         form = ProfileForm(request.POST, request.FILES, instance=user_info)
         if form.is_valid():

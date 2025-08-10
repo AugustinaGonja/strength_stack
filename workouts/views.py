@@ -9,7 +9,7 @@ def Home(request):
     return render(request ,"index.html")
 
 def Dashboard(request):
-    workouts = Workouts.objects.all().order_by('-updated_on')
+    workouts = Workouts.objects.filter(user=request.user).all().order_by('-updated_on')
     return render(request, "dashboard.html", {"workouts": workouts})
 
 def About(request):
