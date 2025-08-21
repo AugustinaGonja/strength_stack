@@ -110,3 +110,6 @@ def UpdateExercise(request, exercise_id):
 
 def ErrorPage(request):
     return render(request, "404.html")
+
+def ErrorPage500(request):
+    return render(request, "500.html")

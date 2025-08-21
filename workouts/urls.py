@@ -31,4 +31,5 @@ urlpatterns = [
         name='delete_ex'
     ),
     path('404/', views.ErrorPage, name='404'),
+    path('500/', views.ErrorPage500, name='500'),
 ]
