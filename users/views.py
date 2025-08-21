@@ -15,7 +15,7 @@ def UpdateProfile(request):
     if request.method == "POST":
         form = ProfileForm(request.POST, request.FILES, instance=user_info)
         if form.is_valid():
-            profile = form.save(commit=False)
+            profile = form.save()
             profile.user = request.user 
             return redirect('profile')
     else:
