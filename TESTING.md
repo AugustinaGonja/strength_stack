@@ -34,6 +34,7 @@ I also attempted to use Django Testing , to build automated tests for my forms .
 ## Automated Testing
 ### WC3 HTML & CSS Validator
 The W3C Validator was used to check and validate the HTML and CSS for all pages of the website. Validation was performed by directly entering each page’s web link into the tool.
+The only errors came from the profile & update profile page which was stated as "IO Error: HTTP resource not retrievable. The HTTP status from the remote server was: 500" of which I researched but did not know how to fix.
 
 * [Home Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2F) - No errors or warnings.
 * [Index Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2F) - No errors or warnings.
@@ -41,7 +42,7 @@ The W3C Validator was used to check and validate the HTML and CSS for all pages 
 * [Login Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Faccounts%2Flogin%2F) - No errors or warnings.
 * [Registration Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Faccounts%2Fsignup%2F) - No errors or warnings.
 * [Profile Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Fusers%2Fprofile%2F) - 500 Internal Server Error
-* [Update Profile Page]()-  500 Internal Server Error
+* [Update Profile Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Fusers%2Fupdate_profile%2F)-  500 Internal Server Error
 * [Dashboard](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Fdashboard%2F) - No errors or warnings.
 * [Update Workout Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Fupdate_workout%2F16%2F) -No errors or warnings.
 * [Create Workout Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Fcreate%2F) - No errors or warnings.
@@ -49,7 +50,8 @@ The W3C Validator was used to check and validate the HTML and CSS for all pages 
 * [Update Exercise Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Fupdate_exercise%2F24%2F) - No errors or warnings.
 * [Create Exercise Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Fadd_exercise%2F13%2F) - No errors or warnings.
 * [Logout Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Faccounts%2Flogout%2F) - No errors or warnings.
-* [404 Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Faccountsss%2Flogout%2F) - There are no other errors; the validator simply identified the 404 page.<br>
+* [404 Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Faccountsss%2Flogout%2F) - There are no other errors; the validator simply identified the 404 page.
+* [500 Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2F500%2F) - No errors or warnings.<br>
 * [CSS Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 ### Python Validator
@@ -136,9 +138,10 @@ I used Lighthouse on ChromeDevTools to test perfomance of my website on desktop 
 * [Create Exercise Page](staticfiles/images/TESTING%20images/create-ex-%20lighthouse.png)
 * [Logout Page](staticfiles/images/TESTING%20images/logout%20-%20lighthouse.png)
 * [404 Page](staticfiles/images/TESTING%20images/404-lighthouse.png)
+* [500 Page](staticfiles/images/TESTING%20images/500-lighthouse.png)
 
 **To summarise :**  
-Performance scores for the Index, Home, and 404 pages were the lowest at 73, which is below the desired level but passable.
+Performance scores for the Index, Home, and 404 pages were some of the lowest at 73, the lowest being the 500 page at 65, which is below the desired level but passable.
 I suspect that Chrome extensions may have impacted these results. 
 Aside from that, most performance metrics were in the green.
 
@@ -266,16 +269,15 @@ I tested the website across the following devices and browsers, and it displayed
 
 | No | Bug | How I solved the issue |
 | :--- | :--- | :--- |
-| 1| When creating and logging into a new account, the dashboard isn’t reset and still displays the superuser’s information.| I referred to the discussion board below to determine the necessary changes. I needed to ensure that the information retrieved from the database matched the currently logged-in user. Adding **.filter(user=request.user)** to the relevant views resolved the issue. <br><br>[Fix](https://stackoverflow.com/questions/64802240/django-how-to-only-display-content-made-by-a-user-to-that-same-user) |
+| 1| When creating and logging into a new account, the dashboard isn’t reset and still displays the superuser’s information.| I referred to the discussion board below to determine the necessary changes. I needed to ensure that the information retrieved from the database matched the currently logged-in user. Adding **.get(user=request.user)** to the relevant views resolved the issue. <br><br>[Fix](https://stackoverflow.com/questions/64802240/django-how-to-only-display-content-made-by-a-user-to-that-same-user) |
 | 2 | When zooming out in the browser, the background/hero image doesn’t resize properly, leaving a white space between it and the footer.|The issue was caused by a fixed height in my CSS that ignored the viewport size. I fixed it by making the height viewport-relative.|
-| 3| When creating and logging into a new account , clicking the profile page will result in a Server 500 Error.<br><br>[Server Error](staticfiles/images/TESTING%20images/500%20error.png)| Resolved in the same way as the bug in row 2, by filtering the profile view with **.filter(user=request.user)**.|
+| 3| When creating and logging into a new account , clicking the profile page will result in a Server 500 Error.<br><br>[Server Error](staticfiles/images/TESTING%20images/500%20error.png)| Resolved in the same way as the bug in row 2, by filtering the profile view with **.get(user=request.user)**.|
 
 ## Known Bugs 
 
 | No | Bug | Issue |
 | :--- | :--- | :--- |
 | 1 | On the login page, if you refresh after receiving an invalid username or password error, the error message should disappear - but currently, it remains displayed.<br>[Login](staticfiles/images/TESTING%20images/Login%20Error.png)| X |
-| 2 | When a user creates a new profile, then tries to edit and save it, a server 500 error occurs unexpectedly. This functionality was working previously.| X |
-| 3 | The "Remember me" on the Login and Registration page box does not save account details.| X |
+| 2 | The "Remember me" on the Login and Registration page box does not save account details.| X |
 ---
 [Back to the Top](#strengthstack---testing)
