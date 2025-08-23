@@ -31,7 +31,7 @@ def Login(request):
 
 def ViewWorkout(request, view_id):
     workout = get_object_or_404(Workouts, id=view_id)
-    exercises = workout.exercises.all().order_by('-updated_on')
+    exercises = workout.exercises.all().order_by('updated_on')
     return render(
         request,
         "view.html",
