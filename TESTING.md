@@ -7,7 +7,7 @@
 ## Contents
 **[Automated Testing](#automated-testing)**
 * [W3C Validator](#wc3-html--css-validator)
-* [Python Validator](#wc3-html-validator)
+* [Python Validator](#python-validator)
 * [Django Testing](#django-testing)
 
 
@@ -33,16 +33,16 @@ I also attempted to use Django Testing , to build automated tests for my forms .
 
 ## Automated Testing
 ### WC3 HTML & CSS Validator
-The W3C Validator was used to check and validate the HTML and CSS for all pages of the website. Validation was performed by directly entering each page’s web link into the tool.
-The only errors came from the profile & update profile page which was stated as "IO Error: HTTP resource not retrievable. The HTTP status from the remote server was: 500" of which I researched but did not know how to fix.
-
+The W3C Validator was used to check and validate the HTML and CSS for all pages of the website. Validation was performed by directly entering each page’s web link into the tool.<br><br>
+The only errors came from the profile & update profile page which was stated as "IO Error: HTTP resource not retrievable. The HTTP status from the remote server was: 500" of which I researched but did not know how to fix.<br><br>
+For these two pages, I validated the rendered HTML by pasting the code into the validator. I did this by opening the page in the browser, right-clicking, and selecting 'View Page Source.' This allowed me to validate the HTML and bypass the server error.
 * [Home Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2F) - No errors or warnings.
 * [Index Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2F) - No errors or warnings.
 * [About Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Fabout%2F) - No errors or warnings.
 * [Login Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Faccounts%2Flogin%2F) - No errors or warnings.
 * [Registration Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Faccounts%2Fsignup%2F) - No errors or warnings.
-* [Profile Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Fusers%2Fprofile%2F) - 500 Internal Server Error
-* [Update Profile Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Fusers%2Fupdate_profile%2F)-  500 Internal Server Error
+* [Profile Page](staticfiles/images/TESTING%20images/wc3%20-%20profile.png) - No errors or warnings (text-input).
+* [Update Profile Page](staticfiles/images/TESTING%20images/wc3%20-%20profileedit.png) - No errors or warnings (text-input).
 * [Dashboard](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Fdashboard%2F) - No errors or warnings.
 * [Update Workout Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Fupdate_workout%2F16%2F) -No errors or warnings.
 * [Create Workout Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Fcreate%2F) - No errors or warnings.
@@ -50,13 +50,13 @@ The only errors came from the profile & update profile page which was stated as 
 * [Update Exercise Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Fupdate_exercise%2F24%2F) - No errors or warnings.
 * [Create Exercise Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Fadd_exercise%2F13%2F) - No errors or warnings.
 * [Logout Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Faccounts%2Flogout%2F) - No errors or warnings.
-* [404 Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Faccountsss%2Flogout%2F) - There are no other errors; the validator simply identified the 404 page.
-* [500 Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2F500%2F) - No errors or warnings.<br>
-* [CSS Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [404 Error Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2Faccountsss%2Flogout%2F) - There are no other errors; the validator simply identified the 404 page.
+* [500 Error Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2F500%2F) - No errors or warnings.<br>
+* [CSS Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) - No Error Found.
 
 ### Python Validator
 To validate all my Python code, I used the Code Institute [Python Linter](https://pep8ci.herokuapp.com/).<br>
-
+All was clear with no errors found.<br><br>
 **"workouts" App :**
 
 * [admin.py](staticfiles/images/TESTING%20images/admin-workouts-PL.png)
@@ -118,7 +118,7 @@ I used the WAVE Contrast Checker to verify if my webpages passed accessibility s
 
 The only factor affected was when elements on the page had filters applied - for example, the hero image on the homepage. Otherwise, all pages pass the color contrast checker, ensuring accessibility and readability for all users.
 
-## Performace Results 
+## Performance Results 
 I used Lighthouse on ChromeDevTools to test perfomance of my website on desktop - page by page.
 <br>The results are as shown below.
 
@@ -137,11 +137,11 @@ I used Lighthouse on ChromeDevTools to test perfomance of my website on desktop 
 * [Update Exercise Page](staticfiles/images/TESTING%20images/edit-ex-%20lighthouse.png)
 * [Create Exercise Page](staticfiles/images/TESTING%20images/create-ex-%20lighthouse.png)
 * [Logout Page](staticfiles/images/TESTING%20images/logout%20-%20lighthouse.png)
-* [404 Page](staticfiles/images/TESTING%20images/404-lighthouse.png)
-* [500 Page](staticfiles/images/TESTING%20images/500-lighthouse.png)
+* [404 Error Page](staticfiles/images/TESTING%20images/404-lighthouse.png)
+* [500 Error Page](staticfiles/images/TESTING%20images/500-lighthouse.png)
 
 **To summarise :**  
-Performance scores for the Index, Home, and 404 pages were some of the lowest at 73, the lowest being the 500 page at 65, which is below the desired level but passable.
+Performance scores for the Index, Home, and 404 pages were some of the lowest at 73, the lowest being the 500 page at 71, which is below the desired level but passable.
 I suspect that Chrome extensions may have impacted these results. 
 Aside from that, most performance metrics were in the green.
 
@@ -266,7 +266,7 @@ I tested the website across the following devices and browsers, and it displayed
 | Sign Out Button | Sign Out button redirects user back to the home page and signs them out of thier account| Sign Out button clicked | User signed out | Pass |
 
 # Solved & Known Bugs  
-
+## Solved Bugs
 | No | Bug | How I solved the issue |
 | :--- | :--- | :--- |
 | 1| When creating and logging into a new account, the dashboard isn’t reset and still displays the superuser’s information.| I referred to the discussion board below to determine the necessary changes. I needed to ensure that the information retrieved from the database matched the currently logged-in user. Adding **.get(user=request.user)** to the relevant views resolved the issue. <br><br>[Fix](https://stackoverflow.com/questions/64802240/django-how-to-only-display-content-made-by-a-user-to-that-same-user) |
